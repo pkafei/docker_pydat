@@ -3,9 +3,13 @@ RUN apt-get update && apt-get -y install sudo curl git-core build-essential libg
 
 ## Installing pyDat
 
-RUN pip install requests
+RUN apt-get install wget
 
-RUN pip install json
+RUN wget https://bootstrap.pypa.io/get-pip.py
+
+RUN python get-pip.py
+
+RUN pip install requests
 
 RUN git clone https://github.com/pkafei/Dat-Python
 
